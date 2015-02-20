@@ -1,0 +1,2 @@
+printing(X,Y):-
+  write('Hello World.').
