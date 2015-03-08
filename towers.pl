@@ -9,7 +9,5 @@ play(N,I,J,K):-
   N>1,
   L is N-1,
   play(L,I,K,J),
-  play(L,I,J,_),
+  play(1,I,J,_),
   play(L,K,J,I).
-  
-
