@@ -1,13 +1,16 @@
-play(1,I,J,_):-
-  write('Place disk from '),
+play(0,_,_,_):-
+  !.
+play(N,I,J,K):-
+  L is N-1,
+  play(L,I,K,J),
+  step(I,J),
+  write(L),
+  play(L,K,J,I).
+
+step(I,J):-
+  write('Place disk from the '),
   write(I),
   write(' peg to the '),
   write(J),
   write(' peg.'),
   nl.
-play(N,I,J,K):-
-  N>1,
-  L is N-1,
-  play(L,I,K,J),
-  play(1,I,J,_),
-  play(L,K,J,I).
